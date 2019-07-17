@@ -9,12 +9,15 @@ services:
     volumes:
       - .:/var/www/
   database:
-    image: mysql:5
+    build:
+      context: .
+      dockerfile: database.Dockerfile
     ports:
       - 3306:3306
     volumes:
       - data:/var/lib/mysql
     environment:
       MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: bristol_php_training
 volumes:
   data: {}
