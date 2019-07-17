@@ -1,0 +1,7 @@
+{
+    "name": "bristol_php_training/slim_app",
+    "type": "project",
+    "require": {
+        "slim/slim": "^3.12"
+    }
+}
