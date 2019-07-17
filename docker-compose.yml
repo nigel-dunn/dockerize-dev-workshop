@@ -8,6 +8,11 @@ services:
       - 80:80
     volumes:
       - .:/var/www/
+    environment:
+      DB_HOST: database
+      DB_USER: root
+      DB_PASSWORD: password
+      DB_NAME: bristol_php_training
   database:
     build:
       context: .
