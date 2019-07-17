@@ -1,14 +1,20 @@
 version: "3"
 services:
   app:
-    image: php:apache
+    build:
+      context: .
+      dockerfile: app.Dockerfile
     ports:
       - 80:80
     volumes:
       - .:/var/www/
   database:
     image: mysql:5
+    ports:
+      - 3306:3306
     volumes:
       - data:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: password
 volumes:
   data: {}
