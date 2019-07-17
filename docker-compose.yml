@@ -1,0 +1,14 @@
+version: "3"
+services:
+  app:
+    image: php:apache
+    ports:
+      - 80:80
+    volumes:
+      - .:/var/www/
+  database:
+    image: mysql:5
+    volumes:
+      - data:/var/lib/mysql
+volumes:
+  data: {}
